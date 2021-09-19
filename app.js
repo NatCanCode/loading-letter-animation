@@ -26,3 +26,21 @@ anime.timeline({loop: true})
     duration: 1100,
     delay: (el, i) => 100 + 30 * i
   })
+
+// scroll reveal
+// ScrollReveal().reveal('.nav-links')
+const sr = ScrollReveal({
+    duration: 1000,
+    reset: true,
+    mobile: true
+})
+sr.reveal('.scrollreveal', {
+	// interval: 16, ???
+})
+sr.reveal('.scroll1', {
+    delay: 500
+})
+sr.reveal('.scroll2', {
+    delay: 1000
+}, 200) // delai en cascade en millisecondes
+
