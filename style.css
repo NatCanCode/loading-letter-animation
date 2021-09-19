@@ -1,0 +1,106 @@
+*, ::before, ::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    color: #FFFFF4;
+}
+img{
+    /* garder ratio d'une image  */
+    object-fit: cover;
+    display: block;
+    max-width: 100%;  /* si elle n'a plus la place, elle va se reduire */
+}
+p{
+    font-size: clamp(13px, 10vw, 20px);
+}
+h1, h2, h3, h5, h6{
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.landing{
+    height: 100%;
+    width: 100%;
+    background: url(./images/pexels-alex-andrews-861440.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.landing h1{
+    font-size: clamp(100px, 10vw, 320px);
+    /* transition: transform 330ms ease-in-out; */
+    margin-bottom: 480px;
+    text-align: center;
+}
+
+/* Loader */
+.loader{
+    position: absolute; /* passe au-dessus du landing */
+    width: 100%;
+    height: 100%;
+    background: rgb(55, 53, 53);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.load-letter{
+    color: #efd9d1;
+    font-size: 80px;
+    letter-spacing: 15px;
+    margin-bottom: 150px;
+    animation: flash 1.2s linear infinite;
+}
+@keyframes flash{
+    /* Neon effect like heart beats */
+    0%{
+        color: #EFB7B7;
+        /* glowy blur of 7px */
+        text-shadow: 0 0 7px #EFB7B7;
+    }
+    90%{
+        color: #eee8e8;
+        text-shadow: none;
+    }
+    100%{
+        color: #EFB7B7;
+        text-shadow: 0 0 7px #EFB7B7;
+    }
+}
+/* Delay effect one letter after another starting with 1st child */
+.load-letter:nth-child(1){
+     animation-delay: .1s;
+}
+.load-letter:nth-child(2){
+    animation-delay: .2s;
+}
+.load-letter:nth-child(3){
+    animation-delay: .3s;
+}
+.load-letter:nth-child(4){
+    animation-delay: .4s;
+}
+.load-letter:nth-child(5){
+    animation-delay: .5s;
+}
+.load-letter:nth-child(6){
+    animation-delay: .6s;
+}
+/* Overlay to have the loading letters disapear when the page is completely loaded */
+/* ease-out = slower opacity at the end */
+.fading-out{
+    opacity: 0;
+    transition: opacity .4s ease-out;
+}
+
+/* h1 letter animation from the right */
+.animation .letter{
+    display: inline-block;
+}
