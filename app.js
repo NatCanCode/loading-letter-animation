@@ -5,7 +5,7 @@ window.addEventListener('load', () => {
 })
 
 // Wrap every letter in a span
-var textWrapper = document.querySelector('.animation')
+let textWrapper = document.querySelector('.animation')
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>")
 
 anime.timeline({loop: true})
